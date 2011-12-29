@@ -1,0 +1,5 @@
+lib/
+bin/
+obj/
+*.lxml
+*.as3proj
