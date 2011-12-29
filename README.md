@@ -15,7 +15,7 @@ Use the [ExportSWC](http://sourceforge.net/projects/exportswc/) plugin for Flash
 [SOSLoggingTarget](https://github.com/srohde/SOSLoggingTarget) by Sönke Rohde.
 Modifications by [Matt Bolt](https://github.com/mbolt35), [Joel Stewart](https://github.com/ojstewart).
 
-###### license ######
+### license ###
 
 Licensed under the Apache License, Version 2.0 (the "License"); you may not
 use this file except in compliance with the License. You may obtain a copy of
