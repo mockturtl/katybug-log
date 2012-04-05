@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+    <meta charset='utf-8' />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1" />
+    <meta name="description" content="Katybug-log : XMLSocket connection to Powerflasher SOS using the Flex logging framework." />
+
+    <link rel="stylesheet" type="text/css" media="screen" href="stylesheets/stylesheet.css">
+
+    <title>Katybug-log</title>
+  </head>
+
+  <body>
+
+    <!-- HEADER -->
+    <div id="header_wrap" class="outer">
+        <header class="inner">
+          <a id="forkme_banner" href="https://github.com/mockturtl/katybug-log">Fork Me on GitHub</a>
+
+          <h1 id="project_title">Katybug-log</h1>
+          <h2 id="project_tagline">XMLSocket connection to Powerflasher SOS using the Flex logging framework.</h2>
+
+          <section id="downloads">
+            <a class="zip_download_link" href="https://github.com/mockturtl/katybug-log/zipball/master">Download this project as a .zip file</a>
+            <a class="tar_download_link" href="https://github.com/mockturtl/katybug-log/tarball/master">Download this project as a tar.gz file</a>
+          </section>
+        </header>
+    </div>
+
+    <!-- MAIN CONTENT -->
+    <div id="main_content_wrap" class="outer">
+      <section id="main_content" class="inner">
+        <h3>Usage</h3>
+
+<p>Download <a href="http://www.sos.powerflasher.com/developer-tools/sosmax/download/">SOSmax</a>.  It's Java.</p>
+
+<p>Copy the source to your project's <code>src</code> directory, or compile a swc and drop it in <code>lib</code>.</p>
+
+<div class="highlight">
+<pre><span class="kd">package</span> <span class="o">{</span>  
+  <span class="kd">public</span> <span class="kd">class</span> <span class="n">MyClass</span> <span class="o">{</span>
+    <span class="k">import</span> <span class="nn">com.katybug.logging.LogUtil</span><span class="o">;</span>
+    <span class="k">import</span> <span class="nn">com.katybug.logging.SOSLogTarget</span><span class="o">;</span>
+    <span class="k">import</span> <span class="nn">mx.logging.ILogger</span><span class="o">;</span>
+    <span class="k">import</span> <span class="nn">mx.logging.Log</span><span class="o">;</span>
+
+    <span class="kd">private</span> <span class="kd">static</span> <span class="kd">const</span> <span class="n">LOG</span><span class="p">:</span><span class="kt">ILogger</span> <span class="o">=</span> <span class="n">Log</span><span class="o">.</span><span class="na">getLogger</span><span class="o">(</span><span class="n">LogUtil</span><span class="o">.</span><span class="na">categoryFor</span><span class="o">(</span><span class="n">prototype</span><span class="o">));</span>
+
+    <span class="kd">public</span> <span class="kd">function </span><span class="nf">Main</span><span class="o">()</span> <span class="o">{</span>
+      <span class="n">Log</span><span class="o">.</span><span class="na">addTarget</span><span class="o">(</span><span class="k">new</span> <span class="kt">SOSLogTarget</span><span class="o">());</span>
+    <span class="o">}</span>
+
+    <span class="kd">public</span> <span class="kd">function </span><span class="nf">demo</span><span class="o">()</span> <span class="o">{</span> 
+
+      <span class="n">LOG</span><span class="o">.</span><span class="na">debug</span><span class="o">(</span><span class="s2">"Hello World!"</span><span class="o">);</span>
+      <span class="n">LOG</span><span class="o">.</span><span class="na">info</span><span class="o">(</span><span class="s2">"Give any class a {0} instance"</span><span class="o">,</span> <span class="n">LOG</span><span class="o">);</span>
+      <span class="n">LOG</span><span class="o">.</span><span class="na">warn</span><span class="o">(</span><span class="s2">"Looks like trouble, unfold me for details...\n\tSee?"</span><span class="o">);</span>
+
+      <span class="k">try</span> <span class="o">{</span>
+        <span class="k">throw</span> <span class="k">new</span> <span class="kt">Error</span><span class="o">(</span><span class="s2">"Something went wrong"</span><span class="o">,</span> <span class="mi">54321</span><span class="o">);</span>
+      <span class="o">}</span> <span class="k">catch</span> <span class="o">(</span><span class="n">e</span><span class="o">:</span><span class="n">Error</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="na">error</span><span class="o">(</span><span class="s2">"{1}: {0}"</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">message</span><span class="o">,</span> <span class="n">e</span><span class="o">.</span><span class="na">errorID</span><span class="o">);</span>
+        <span class="n">LOG</span><span class="o">.</span><span class="na">fatal</span><span class="o">(</span><span class="s2">"Warp core breach.  You have been eaten by a grue."</span><span class="o">);</span>
+      <span class="o">}</span>
+
+    <span class="o">}</span>  
+  <span class="o">}</span>
+<span class="o">}</span>
+</pre>
+</div>
+
+      </section>
+    </div>
+
+    <!-- FOOTER  -->
+    <div id="footer_wrap" class="outer">
+      <footer class="inner">
+        <p class="copyright">Katybug-log maintained by <a href="https://github.com/mockturtl">mockturtl</a></p>
+        <p>Published with <a href="http://pages.github.com">GitHub Pages</a></p>
+      </footer>
+    </div>
+
+    
+
+  </body>
+</html>
